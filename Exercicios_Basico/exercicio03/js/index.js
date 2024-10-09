@@ -3,5 +3,4 @@ const num2 = prompt('Digite um outro número:');
 
 const resultado = Number(num1) + Number(num2);
 
-alert('Resultado:' + resultado);
-//console.log('Resultado:' + resultado);
+alert(`Resultado: ${resultado}`);
