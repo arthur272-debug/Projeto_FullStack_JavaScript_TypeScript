@@ -6,7 +6,6 @@ let num3 = 10.675543487; // number
 let num4 = 0.7; // number
 let num5 = 0.1; // number
 
-
 // console.log(num1.toString() + num2);
 // console.log(Number.isInteger(num1));
 // num1 = num1.toString();
