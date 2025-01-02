@@ -1,4 +1,4 @@
-// Mais sobre numbers -- ver no chatgpt e anotar no caderno
+// Mais sobre numbers
 
 let num1 = 10; // number
 let num2 = 2.5; // number
