@@ -1,4 +1,4 @@
-// Revisando sobre o objeto Math -- anotar o aprendizado -- chatgpt como auxiliar no resumo do conteúdo
+// Revisando sobre o objeto Math -- anotar o aprendizado
 
 let numero1 = 9.5489;
 let numero2 = Math.floor(numero1);
