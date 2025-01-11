@@ -1,4 +1,4 @@
-// Revisando sobre o objeto Math -- anotar o aprendizado
+// Revisando sobre o objeto Math
 
 let numero1 = 9.5489;
 let numero2 = Math.floor(numero1);
