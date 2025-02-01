@@ -2,9 +2,10 @@
 
 const coisas = [1, null, "Tutu", true, 3.1, "Tuturitutu"];
 console.log(coisas);
-
+const frutas = Array("Banana", "Maçã", "Morango");
 const alunos = ["Luizão", "Maria Bela", "Alessandro"];
 console.log(alunos);
+console.log(frutas);
 alunos[1] = "Mariazinha";
 console.log(alunos);
 console.log(alunos.length);
