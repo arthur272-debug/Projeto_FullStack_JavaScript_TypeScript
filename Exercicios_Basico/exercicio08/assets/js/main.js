@@ -1,8 +1,20 @@
+//revisar código --> assistir a resolução do professor
+
+const form = document.querySelector(".form_icm");
+form.addEventListener("submit", processarDadosform());
+
 function processarDadosform() {
-  const peso = document.querySelector(".peso").value;
-  const altura = document.querySelector(".altura").value;
-  const resultado = document.querySelector(".resultado_icm");
+  const peso = document.querySelector("#peso").value; // # is the id selector
+  const altura = document.querySelector("#altura").value;
+  const resultado = document.querySelector(".resultado_icm"); // . is the class selector
   const erros = document.querySelector(".dados_erros");
+
+  if (peso.typeof !== "number" || altura.typeof !== "number") {
+    erros.innerHTML = `Os valores de peso e altura devem ser números`;
+  } else {
+    peso = parseFloat(peso);
+    altura = parseFloat(altura);
+  }
 
   if (peso > 300 || peso < 0) {
     erros.innerHTML = `Peso inválido`;
@@ -11,8 +23,6 @@ function processarDadosform() {
   } else if (peso && altura) {
     let imc = peso / (altura * altura);
     resultado.innerHTML = classificarIMC(imc);
-  } else {
-    erros.innerHTML = `Preencha corretamente os campos`; ///verificar condição
   }
 }
 
@@ -31,5 +41,3 @@ function classificarIMC(imc) {
     return `O IMC é: ${imc} e está com obesidade grau 3`;
   }
 }
-
-processarDadosform();
