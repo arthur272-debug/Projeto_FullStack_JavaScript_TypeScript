@@ -62,7 +62,6 @@ th, td {
   height: 20px;
   width: 65%;
 }
-/*verificar essa função*/
 .resultado_icm{ 
   margin-top: 20px;
   font-size: 24px;
@@ -70,8 +69,7 @@ th, td {
   background: #09c5ac;
 }
 
-/*verificar essa função*/
-.dados_erros{
+.mensagem_erro{
   background-color: red;
   font-size: 18px;
   font-weight: 700;

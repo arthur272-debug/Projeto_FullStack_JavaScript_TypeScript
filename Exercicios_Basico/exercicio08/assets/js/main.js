@@ -1,43 +1,59 @@
-//revisar código --> assistir a resolução do professor
+const form = document.querySelector(".form_imc");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const inputPeso = e.target.querySelector("#peso");
+  const inputAltura = e.target.querySelector("#altura");
 
-const form = document.querySelector(".form_icm");
-form.addEventListener("submit", processarDadosform());
-
-function processarDadosform() {
-  const peso = document.querySelector("#peso").value; // # is the id selector
-  const altura = document.querySelector("#altura").value;
-  const resultado = document.querySelector(".resultado_icm"); // . is the class selector
-  const erros = document.querySelector(".dados_erros");
-
-  if (peso.typeof !== "number" || altura.typeof !== "number") {
-    erros.innerHTML = `Os valores de peso e altura devem ser números`;
-  } else {
-    peso = parseFloat(peso);
-    altura = parseFloat(altura);
+  const peso = Number(inputPeso.value);
+  const altura = Number(inputAltura.value);
+  if (!peso) {
+    enviarResultado("Peso inválido", false);
+    return;
   }
 
-  if (peso > 300 || peso < 0) {
-    erros.innerHTML = `Peso inválido`;
-  } else if (altura > 3 || altura < 0) {
-    erros.innerHTML = `Altura inválida`;
-  } else if (peso && altura) {
-    let imc = peso / (altura * altura);
-    resultado.innerHTML = classificarIMC(imc);
+  if (!altura) {
+    enviarResultado("Altura inválida", false);
+    return;
   }
+
+  const imc = getImc(peso, altura);
+  const nivelImc = getNivelImc(imc);
+  const msg = `Seu IMC é ${imc} (${nivelImc})`;
+  enviarResultado(msg, true);
+});
+
+function getNivelImc(imc) {
+  const nivel = [
+    "Abaixo do peso",
+    "Peso normal",
+    "Sobrepeso",
+    "Obesidade grau 1",
+    "Obesidade grau 2",
+    "Obesidade grau 3",
+  ];
+
+  if (imc >= 39.9) return nivel[5];
+  if (imc >= 34.9) return nivel[4];
+  if (imc >= 29.9) return nivel[3];
+  if (imc >= 24.9) return nivel[2];
+  if (imc >= 18.5) return nivel[1];
+  if (imc < 18.5) return nivel[0];
 }
 
-function classificarIMC(imc) {
-  if (imc < 18.5) {
-    return `O IMC é: ${imc} e está abaixo do peso`;
-  } else if (imc >= 18.5 && imc < 24.9) {
-    return `O IMC é: ${imc} e está com o peso normal`;
-  } else if (imc >= 25 && imc < 29.9) {
-    return `O IMC é: ${imc} e está com sobrepeso`;
-  } else if (imc >= 30 && imc < 34.9) {
-    return `O IMC é: ${imc} e está com obesidade grau 1`;
-  } else if (imc >= 35 && imc < 39.9) {
-    return `O IMC é: ${imc} e está com obesidade grau 2`;
+function getImc(peso, altura) {
+  const imc = peso / altura ** 2;
+  return imc.toFixed(2);
+}
+
+function enviarResultado(msg, isValid) {
+  const resultado = document.querySelector("#resultado");
+  resultado.innerHTML = "";
+  const p = document.createElement("p");
+  if (isValid) {
+    p.classList.add("resultado_icm");
   } else {
-    return `O IMC é: ${imc} e está com obesidade grau 3`;
+    p.classList.add("mensagem_erro");
   }
+  p.innerHTML = msg;
+  resultado.appendChild(p);
 }
