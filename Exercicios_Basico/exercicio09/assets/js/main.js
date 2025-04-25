@@ -1,5 +1,4 @@
 // praticando a estrutura de switch/case
-// terminar de assistir o vídeo da resolução do exercício
 
 const h1 = document.querySelector(".container h1");
 const data = new Date();
@@ -56,11 +55,24 @@ function escolherMes(mes) {
   }
 }
 
-const dia_semana = escolherDiaDaSemana(data.getDay());
-const dia_mes = data.getDate();
-const nome_mes = escolherMes(data.getMonth());
-const ano = data.getFullYear();
-const hora_completa = data.toLocaleTimeString("pt-BR", {
-  hour12: false,
-});
-h1.innerHTML = `${dia_semana}, ${dia_mes} de ${nome_mes} de ${ano} <br> ${hora_completa}`;
+function construirData(data) {
+  const dia_semana = escolherDiaDaSemana(data.getDay());
+  const dia_mes = data.getDate();
+  const nome_mes = escolherMes(data.getMonth());
+  const ano = data.getFullYear();
+  const hora_completa = data.toLocaleTimeString("pt-BR", {
+    hour12: false,
+  });
+  return `${dia_semana}, ${dia_mes} de ${nome_mes} de ${ano} <br> ${hora_completa}`;
+}
+
+h1.innerHTML = construirData(data);
+
+// forma de fazer o mesmo exercicio sem o switch/case - de forma mais simples
+//const h1 = document.querySelector(".container h1");
+//const data = new Date();
+//const opcoes = {
+// dataStyle: "full",
+// timeStyle: "short",
+// };
+//h1.innerHTML = data.toLocaleDateString("pt-BR", opcoes);
