@@ -1,8 +1,8 @@
 // revisando sobre switch/case
 
 const data = new Date();
-const diaDaSemana = data.getDay(); // 0 - domingo, 1 - segunda, 2 - terça, 3 - quarta, 4 - quinta, 5 - sexta, 6 - sábado
-switch (diaDaSemana) {
+const dia_da_semana = data.getDay(); // 0 - domingo, 1 - segunda, 2 - terça, 3 - quarta, 4 - quinta, 5 - sexta, 6 - sábado
+switch (dia_da_semana) {
   case 0:
     console.log("Hoje é domingo!");
     break;
