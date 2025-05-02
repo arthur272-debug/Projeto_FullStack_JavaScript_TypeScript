@@ -1,0 +1,1 @@
+// atribuição via desestruturação - objeto
