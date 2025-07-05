@@ -7,8 +7,3 @@ for (let nome of nomes) {
   console.log(nome);
 }
 
-const pessoa = {
-  nome: "João",
-  idade: 30,
-  cidade: "São Paulo",
-};
