@@ -6,3 +6,30 @@
 // Número NÃO é divisível por 3 e 5 = Retorna o próprio número
 // Chegar se o número é realmente um número
 // Use a função com números de 0 a 100
+
+function fizzBuzz(numero) {
+
+   if (typeof numero !== "number") {
+      return "Não é um número";
+   }
+
+   if (numero % 3 === 0 && numero % 5 === 0) {
+      return "FizzBuzz";
+   }
+
+   if (numero % 3 === 0) {
+      return "Fizz";
+   }
+
+   if (numero % 5 === 0) {
+      return "Buzz";
+   }
+
+   return numero;
+}
+
+fizzBuzz(15)
+fizzBuzz(9)
+fizzBuzz(10)
+fizzBuzz(3)
+fizzBuzz(7)
