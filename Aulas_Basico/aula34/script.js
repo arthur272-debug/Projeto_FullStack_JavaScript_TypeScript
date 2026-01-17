@@ -1,4 +1,4 @@
-// Revisando sobre o tratamento e lançamento de erros(try,catch,throw)
+// Revisando sobre o tratamento e lançamento de erros(try,catch,throw) - parte 1
 
 // try {
 //   console.log(ab);
