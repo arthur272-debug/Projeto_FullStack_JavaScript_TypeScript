@@ -4,6 +4,7 @@ function Calculadora() {
   this.display = document.querySelector(".display");
   this.clear = document.querySelector(".btn-clear");
 
+  this.iniciarCalculadora = () => this.apertarBotoes();
   this.apertarBotoes = () => {
     document.addEventListener("click", (e) => {
       const el = e.target;
@@ -32,7 +33,6 @@ function Calculadora() {
     }
     this.display.value = conta;
   };
-  this.iniciarCalculadora = () => this.apertarBotoes();
 }
 
 const calculadora = new Calculadora();
