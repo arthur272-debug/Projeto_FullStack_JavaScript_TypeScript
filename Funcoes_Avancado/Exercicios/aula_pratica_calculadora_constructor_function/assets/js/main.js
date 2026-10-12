@@ -18,7 +18,6 @@ function Calculadora() {
   this.limparDisplay = () => (this.display.value = "");
   this.limparCaracter = () =>
     (this.display.value = this.display.value.slice(0, -1));
-
   this.realizarConta = () => {
     let conta = this.display.value;
     try {
