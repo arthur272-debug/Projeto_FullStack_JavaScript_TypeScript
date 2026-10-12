@@ -1,4 +1,4 @@
-//Aula prática -> exercício calculadora
+//Aula prática -> exercício calculadora - factory function
 function criarCalculadora() {
   return {
     display: document.querySelector(".display"),
