@@ -1,0 +1,1 @@
+// Praticando o método splice
