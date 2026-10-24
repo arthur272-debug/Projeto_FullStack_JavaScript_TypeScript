@@ -1,1 +1,1 @@
-// apredendo sobre o método filter
+// apredendo sobre o método filter em arrays
